@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row" id='post'>
+  	<p id="notice"><%= notice %></p>
+
+  	<p>
+  	  <b>Title:</b>
+  	  <%= @post.titulo %>
+  	</p>
+
+  	<p>
+  	  <% if @post.has_photo? %> 
+  	  	<!-- metodo auxiliar para las imagenes-->
+  	  	<%= image_tag @post.photo_path %>
+  	  <% else %>
+  	  	<b>Problem in upload process</b>
+  	  <% end %>  	
+  	</p>
+  </div>
+</div>
+<br />
+

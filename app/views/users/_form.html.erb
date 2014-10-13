@@ -1,0 +1,49 @@
+<div class="row show-grid" id='post'>
+  <%= form_for(@user) do |f| %>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class='col-xs-6 col-md-4'>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="input-group input-group-lg">
+          <span>
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+          </span>
+        </div>
+        <div class="input-group input-group-lg">
+          <span>
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+          </span>
+        </div>
+        <div class="input-group input-group-lg">
+          <span>
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation %>
+          </span>
+        </div>
+        <br>
+        <div class="input-group input-group-lg">
+          <span>
+            <%= f.submit class: 'btn btn-default'%>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  <% end %>
+</div>
+<br>
+
+
+    
+    
